@@ -4631,14 +4631,33 @@ function asArray(value) {
   this.layerManager.addLayer(L.tileLayer.provider(provider, options), "tile", layerId, group);
 };
 </script>
+<style type="text/css">.leaflet-control-wms-legend
+{
+display: block;
+padding: 3px;
+border-radius: 4px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+box-shadow: 0 1px 7px rgba(0, 0, 0, 0.65);
+cursor: auto;
+text-align: center;
+background-color: #FFFFFF;
+}
+.leaflet-control-wms-legend:hover
+{
+background-color: #F4F4F4;
+}
+</style>
+<script>!function(t){var i={};function n(e){if(i[e])return i[e].exports;var o=i[e]={i:e,l:!1,exports:{}};return t[e].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=i,n.d=function(t,i,e){n.o(t,i)||Object.defineProperty(t,i,{configurable:!1,enumerable:!0,get:e})},n.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},n.n=function(t){var i=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(i,"a",i),i},n.o=function(t,i){return Object.prototype.hasOwnProperty.call(t,i)},n.p="",n(n.s=3)}([,function(t,i,n){},function(t,i){L.Control.WMSLegend=L.Control.extend({options:{position:"topright",uri:""},onAdd:function(){var t=L.DomEvent.stopPropagation;return this.container=L.DomUtil.create("div","leaflet-control-wms-legend"),this.img=L.DomUtil.create("img","wms-legend",this.container),this.img.src=this.options.uri,this.img.alt="Legend",L.DomEvent.on(this.img,"click",this._click,this).on(this.container,"click",this._click,this).on(this.img,"mousedown",t).on(this.img,"dblclick",t).on(this.img,"click",L.DomEvent.preventDefault).on(this.img,"click",t),this.height=null,this.width=null,this.container},_click:function(t){L.DomEvent.stopPropagation(t),L.DomEvent.preventDefault(t),"none"===window.getComputedStyle(this.img).display?(this.container.style.height=this.height+"px",this.container.style.width=this.width+"px",this.img.style.display=this.displayStyle):(null===this.width&&null===this.height&&(this.height=this.container.offsetHeight,this.width=this.container.offsetWidth),this.displayStyle=this.img.style.display,this.img.style.display="none",this.container.style.height="20px",this.container.style.width="20px")}}),L.wmsLegend=function(t){var i=new L.Control.WMSLegend;return i.options.uri=t,map.addControl(i),i}},function(t,i,n){n(2),t.exports=n(1)}]);
+//# sourceMappingURL=lfx-wms-legend-prod.js.map</script>
 </head>
 <body style="background-color: white;">
 <div id="htmlwidget_container">
-<div id="htmlwidget-5b1be5dac6d31e6a7a1a" class="leaflet html-widget" style="width:100%;height:400px;">
+<div id="htmlwidget-9b7e9f57620bf2101e2d" class="leaflet html-widget" style="width:100%;height:400px;">
 
 </div>
 </div>
-<script type="application/json" data-for="htmlwidget-5b1be5dac6d31e6a7a1a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.Terrain",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addWMSTiles","args":["http://apps.ecmwf.int/wms/",null,null,{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","token":"public","srs":"EPSG:4326","opacity":0.7,"layers":"composition_bbaod550"}]}],"setView":[[-23,-46],4,[]]},"evals":[],"jsHooks":[]}</script>
-<script type="application/htmlwidget-sizing" data-for="htmlwidget-5b1be5dac6d31e6a7a1a">{"viewer":{"width":"100%","height":400,"padding":0,"fill":true},"browser":{"width":"100%","height":400,"padding":0,"fill":true}}</script>
+<script type="application/json" data-for="htmlwidget-9b7e9f57620bf2101e2d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.Terrain",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addWMSTiles","args":["http://apps.ecmwf.int/wms/",null,null,{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","token":"public","opacity":0.7,"layers":"composition_bbaod550"}]}],"setView":[[-23,-46],4,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (function(el,x,data){\n                              var map = this;\n                              var wmsLegendControl = new L.Control.WMSLegend(data.options);\n                              if (data.layerId) {\n                                map.controls.add(wmsLegendControl);\n                              } else {\n                                map.controls.add(wmsLegendControl, data.layerId);\n                              }\n                            }).call(this.getMap(), el, x, data);\n}","data":{"options":{"uri":"https://apps.ecmwf.int/wms/?token=public&service=WMS&request=GetLegendGraphic&FORMAT=image/png&LAYER=Boosmansbos&STYLE=","position":"topright"}}}]}}</script>
+<script type="application/htmlwidget-sizing" data-for="htmlwidget-9b7e9f57620bf2101e2d">{"viewer":{"width":"100%","height":400,"padding":0,"fill":true},"browser":{"width":"100%","height":400,"padding":0,"fill":true}}</script>
 </body>
 </html>
