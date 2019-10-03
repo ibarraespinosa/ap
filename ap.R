@@ -19,6 +19,3 @@ ti <- paste("2018-01-01", c("00:00", "06:00", "12:00", "18:00"))
 tii <- as.POSIXct(ti, tz = "America/Sao_Paulo")
 tii_gmt <- tii
 attr(tii_gmt, "tzone") <- "GMT"
-system("git add .")
-system(paste0("git commit -m,  'update ", Sys.time(), "'"))
-system("git push --repo https://ibarraespinosa:NOdigas0@github.com/ibarraespinosa/ap.git")
