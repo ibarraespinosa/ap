@@ -7,7 +7,7 @@ m <- leaflet() %>%
   addProviderTiles(provider = "Stamen.Terrain") %>% 
   setView(-46, -23, zoom = 4) %>%
   addWMSTiles("http://apps.ecmwf.int/wms/", 
-              layers = "composition_o3sfc", 
+              layers = "composition_pm2p5", 
               options = WMSTileOptions(token = "public",
                                        format = "image/png", 
                                        transparent = TRUE,
