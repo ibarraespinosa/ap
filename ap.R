@@ -7,7 +7,7 @@ m <- leaflet() %>%
   addProviderTiles(provider = "Stamen.Terrain") %>% 
   setView(-46, -23, zoom = 4) %>%
   addWMSTiles("http://apps.ecmwf.int/wms/", 
-              layers = "composition_o3sfc", 
+              layers = "composition_pm10", 
               options = WMSTileOptions(token = "public",
                                        format = "image/png", 
                                        transparent = TRUE,
@@ -16,6 +16,7 @@ addWMSLegend(uri = "https://apps.ecmwf.int/wms/?token=public&service=WMS&request
 library(htmlwidgets)
 saveWidget(m, file="~/Documentos/ap/index.html")
 
+# https://apps.ecmwf.int/wms/?token=public&request=GetCapabilities
 ti <- paste("2018-01-01", c("00:00", "06:00", "12:00", "18:00"))
 tii <- as.POSIXct(ti, tz = "America/Sao_Paulo")
 tii_gmt <- tii
