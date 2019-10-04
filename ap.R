@@ -1,4 +1,4 @@
-setwd("~/Documentos/ap/")
+\setwd("~/Documentos/ap/")
 library("leaflet")
 library("leaflet.extras")
 library("sp")
@@ -7,7 +7,7 @@ m <- leaflet() %>%
   addProviderTiles(provider = "Stamen.Terrain") %>% 
   setView(-46, -23, zoom = 4) %>%
   addWMSTiles("http://apps.ecmwf.int/wms/", 
-              layers = "composition_bbaod550", 
+              layers = "composition_o3sfc", 
               options = WMSTileOptions(token = "public",
                                        format = "image/png", 
                                        transparent = TRUE,
