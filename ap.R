@@ -1,4 +1,4 @@
-\setwd("~/Documentos/ap/")
+setwd("~/Documentos/ap/")
 library("leaflet")
 library("leaflet.extras")
 library("sp")
